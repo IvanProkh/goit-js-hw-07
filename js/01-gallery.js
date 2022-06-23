@@ -33,9 +33,9 @@ function createImageGalleryMarkup (galleryItems) {
 };
 
 function onGalleryImageClick(e) {
-    const openImage = !e.target.classList.contains('gallery__image');
+    const openImage = e.target.classList.contains('gallery__image');
 
-    if (openImage) {
+    if (!openImage) {
         return
     } else {
         
