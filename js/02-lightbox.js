@@ -3,13 +3,19 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
-const gallery = document.querySelector('.gallery');
+onGalleryImageClick()
 
+const gallery = document.querySelector('.gallery');
 const imagesMarkup = createImageGalleryMarkup(galleryItems);
 
 gallery.insertAdjacentHTML('beforeend', imagesMarkup);
 gallery.addEventListener('click', onGalleryImageClick);
 
+function onGalleryImageClick(e) {
+    
+    const lightbox = new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: 250, });
+    
+}
 function createImageGalleryMarkup (galleryItems) {
     return galleryItems
         .map(({ preview, original, description }) => {
@@ -29,11 +35,6 @@ function createImageGalleryMarkup (galleryItems) {
     .join('');
 };
 
-function onGalleryImageClick(e) {
-
-    const lightbox = new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: 250, });
-
-}
 
 
 

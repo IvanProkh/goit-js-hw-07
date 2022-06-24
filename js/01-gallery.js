@@ -40,10 +40,18 @@ function onGalleryImageClick(e) {
     } else {
         
         const instance = basicLightbox.create(`
-            <img src="${e.target.dataset.source}">
+            <img src="${e.target.dataset.source}"  alt="${e.target.alt}">
         `)
         
         instance.show()
-    }
 
+    function pressEsc(e) {
+
+        if (e.key === 'Escape') {
+            instance.close()
+        }
+    }
+        
+    document.addEventListener('keydown', pressEsc);
+    }
 }
