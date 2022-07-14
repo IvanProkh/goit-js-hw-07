@@ -7,12 +7,12 @@ const gallery = document.querySelector('.gallery');
 const imagesMarkup = createImageGalleryMarkup(galleryItems);
 
 gallery.insertAdjacentHTML('beforeend', imagesMarkup);
-gallery.addEventListener('click', onGalleryImageClick, { once: true });
+// gallery.addEventListener('click', onGalleryImageClick, { once: true });
 
-function onGalleryImageClick(e) {
-    console.log(e);
+// function onGalleryImageClick(e) {
+//     console.log(e);
     const lightbox = new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: 250, });
-}
+// }
 
 function createImageGalleryMarkup (galleryItems) {
     return galleryItems
